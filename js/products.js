@@ -4,8 +4,8 @@ function manageData() {
     fetch(productsURL)
     .then(response => response.json())
     .then(data => {
-        const containerCategory = document.querySelector(".container-category")
-        let myProducts = data.products
+        const containerCategory = document.querySelector(".container-category");
+        let myProducts = data.products;
         for (let i = 0; i < myProducts.length; i++) {
             let contentToAppend = `
             <div id = car-info-container>
@@ -19,9 +19,9 @@ function manageData() {
             </div>
             
             `
-            containerCategory.innerHTML += contentToAppend
+            containerCategory.innerHTML += contentToAppend;
         }
-        console.log(myProducts)
+        
     })
 }
 
