@@ -1,0 +1,27 @@
+#login-img {
+    display: inline-block;
+    height: 200px;
+}
+
+.container-img{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#div-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#login-password {
+margin-top: 1em;
+}
+
+.submit-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2em;
+}

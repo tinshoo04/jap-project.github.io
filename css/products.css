@@ -1,0 +1,38 @@
+.header-title {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.header-description {
+    text-align: center;
+    margin-top: 2em;
+}
+
+
+.container-category {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+
+
+
+#car-info-container {
+    display: flex;
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 2%;
+
+}
+
+#car-pic {
+    width: 20em;
+}
+
+#title-car-info {
+    display: inline
+}

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
   <style>
     body {
       background-color: rgb(248, 249, 250);
@@ -18,10 +19,16 @@
 
 <body>
   <main class="mt-5">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
+    <div class="container-img">
+    <img src = "img/login.png" id = 'login-img'>
+    </div>
+    <div id = "div-form">
+      <form>
+        <input id = "email" type = 'email' name = 'login-email' placeholder = "Ingrese su email">
+        <input id = "login-password" type = 'password' name = 'login-pass' placeholder = "Ingrese su contraseña">
+        <br>
+        <div class = "submit-container"><input id = "submit-buttom" type = "submit"></div>
+            </form>
     </div>
   </main>
   <footer class="text-muted">
