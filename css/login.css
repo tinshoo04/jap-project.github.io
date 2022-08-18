@@ -1,3 +1,5 @@
+
+
 #login-img {
     display: inline-block;
     height: 200px;
@@ -9,19 +11,9 @@
     justify-content: center;
 }
 
-#div-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color : rgb(0, 161, 161);
-    height: 20em;
-    width: 20em;
-    margin-left: 42%;
-    border-radius: 15%;
-}
-
-#login-password {
+.login-params {
 margin-top: 1em;
+height: 3em;
 }
 
 .submit-container{
@@ -31,9 +23,26 @@ margin-top: 1em;
     margin-top: 2em;
 }
 
+#submit-button {
+    width: 80%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+    font-size: larger;
+    border-radius: 73px;
+}
+
+
 #id-input {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+#please-login{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 200;
+
 }

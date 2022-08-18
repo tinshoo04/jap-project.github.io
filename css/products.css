@@ -16,23 +16,27 @@ justify-content: space-between;
 }
 
 
-
-
 #car-info-container {
     display: flex;
     border-color: #000000;
     border-width: 2px;
     border-style: solid;
-    height: fit-content;
-    width: fit-content;
     margin-top: 2%;
+
+}
+
+#title-car-info {
+    display: block;
 
 }
 
 #car-pic {
     width: 20em;
+    margin-right: 2em;
 }
 
-#title-car-info {
-    display: inline
+#product-count {
+    color: rgb(169, 168, 168);
+    text-decoration: wavy;
 }
+

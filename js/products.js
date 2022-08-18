@@ -14,8 +14,8 @@ function manageData() {
             
             <h4 id = "title-car-info">${myProducts[i].name} - ${myProducts[i].cost} ${myProducts[i].currency}</h4>
             <br>
-            <p> ${myProducts[i].description} </p>
-            <p> Este articulo ha sido comprado ${myProducts[i].soldCount} veces </p>
+            <p id = "product-description">${myProducts[i].description}</p>
+            <p id = "product-count"> Este articulo ha sido comprado ${myProducts[i].soldCount} veces </p>
             </div>
             
             `

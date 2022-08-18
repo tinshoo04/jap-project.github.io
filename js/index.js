@@ -12,10 +12,19 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
-let usuario = localStorage.getItem('user')
-if (usuario == null) {
-    window.location.href = "../login.html"
-}
-});
+    const logout = document.getElementById("logout")
+    logout.addEventListener('click', function(e) {
+        let user = localStorage.getItem('user')
+        if (user !== null) {
+            localStorage.removeItem('user')
+            window.location.href = "../login.html"
+        }
+        });
 
+    let user = localStorage.getItem('user')
+    if(user == null){
+
+        alert('No hay usuario logeado')
+        location.href = "../login.html"
+    }})
 
