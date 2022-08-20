@@ -21,9 +21,9 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         });
 
+    })
+
     let user = localStorage.getItem('user')
     if(user == null){
-        alert('No hay usuario logeado')
         location.href = "../login.html"
-    }})
-
+    }
