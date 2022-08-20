@@ -15,6 +15,9 @@
       background-color: rgb(248, 249, 250);
     }
   </style>
+
+  <meta name="google-signin-client_id" content="1044179389010-robrgrjhnnfoj93snhvvv0eo5utgglds.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -33,6 +36,12 @@
         <br>
         <div class = "submit-container"><input class = "w-100 btn btn-lg btn-primary" id = "submit-button" type = "submit"></div>
         </form>
+        <div id = "google-sign-in" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <script>
+          function onSignIn(){
+            window.location.href = "index.html"
+          }
+        </script>
     </div>
   </main>
   <footer class="text-muted">

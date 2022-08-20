@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(e){
     loginForm.addEventListener('submit', function(e){
         if(email.value.length < 1 || password.value.length < 1) {
         e.preventDefault();
-        password.style.border = 'red solid 2px';
+        password.style.border = 'red solid 2px'
         } else {
             e.preventDefault();
             let usuario = localStorage.setItem('user', email.value)
