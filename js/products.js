@@ -1,11 +1,13 @@
 const productsURL = "https://japceibal.github.io/emercado-api/cats_products/101.json"
+const sortAsc = document.getElementById('sortAsc')
+let myProducts;
 
 function manageData() {
     fetch(productsURL)
     .then(response => response.json())
     .then(data => {
         const containerCategory = document.querySelector(".container-category");
-        let myProducts = data.products;
+        myProducts = data.products;
         for (let i = 0; i < myProducts.length; i++) {
             let contentToAppend = `
             <div  class="list-group-item list-group-item-action cursor-active">
@@ -25,11 +27,17 @@ function manageData() {
             `
             containerCategory.innerHTML += contentToAppend;
         }
+        sortItems(myProducts)
         
     })
 }
 
+function sortItems(e){
+console.log(e)
+}
+
 document.addEventListener('DOMContentLoaded', function(e){
     manageData()
-})
+    })
+
 

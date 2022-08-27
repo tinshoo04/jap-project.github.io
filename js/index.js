@@ -1,3 +1,7 @@
+let navItem = document.getElementById("username");
+const logout = document.getElementById("logout")
+
+
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
@@ -12,18 +16,20 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
-    const logout = document.getElementById("logout")
+        let contentToAppend = `
+          <a href="login.html" class="nav-link" id = "logout">${user}</a>
+        `
+         navItem.innerHTML += contentToAppend;
+         
     logout.addEventListener('click', function(e) {
-        let user = localStorage.getItem('user')
         if (user !== null) {
             localStorage.removeItem('user')
             window.location.href = "../login.html"
         }
-        });
+        }); 
 
     })
 
     let user = localStorage.getItem('user')
-    if(user == null){
-        location.href = "../login.html"
-    }
+    if(user == null){location.href = "../login.html"}
+
