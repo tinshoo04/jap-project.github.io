@@ -10,11 +10,15 @@ let containerCategory = document.querySelector(".container-category");
 let filterResult;
 
 
+
+
+
 function manageData() {
     fetch(`https://japceibal.github.io/emercado-api/cats_products/${localStorage.getItem('catID')}.json`)
     .then(response => response.json())
     .then(data => {
         myProducts = data.products;
+        let unmodifiedProducts = data.products
         showData(myProducts)
 
 
@@ -86,7 +90,16 @@ function manageData() {
                         filterSearch = myProducts.filter(product => product.name.toLowerCase().includes(searchBar.value.toLowerCase()))
                         showData(filterSearch)
                     })
+
+                    for(let product of unmodifiedProducts) {
+                        document.getElementById(`${product.name}`).addEventListener('click',function(e){
+                            localStorage.setItem('product', `${product.id}`)
+                            window.location.href = "/product-info.html"
+                        })
+                        
+                    }
 })
+
                 }
 
 
@@ -99,7 +112,7 @@ function showData(data) {
                     <div class="col-3">
                         <img src="${data[i].image}" alt="Imagen de un ${data[i].name}" class="img-thumbnail">
                     </div>
-                    <div class="col">
+                    <div class="col" id= "${data[i].name}" >
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">${data[i].name} - ${data[i].cost} ${data[i].currency}</h4>
                             <small class="text-muted">Este articulo ha sido comprado ${data[i].soldCount} veces</small>
@@ -113,9 +126,9 @@ function showData(data) {
 }
 }
 
-
 document.addEventListener('DOMContentLoaded', function(e){
     manageData()
+    
     })
 
 

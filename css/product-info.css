@@ -1,0 +1,31 @@
+
+#title {
+    margin-top: 2.5%;
+}
+
+
+
+#imgs-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   
+}
+
+.img-class {
+    width: 20rem;
+    margin-top: 5%;
+}
+
+#sold-count {
+    margin-left: 0.5%;
+}
+
+#price {
+    margin-left: 0.5%;
+    margin-bottom: 2%;
+}
+
+#text-comment{
+    resize: none;
+}

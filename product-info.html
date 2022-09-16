@@ -10,6 +10,8 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href = "css/product-info.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -37,11 +39,25 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
+  <div id="product-info" class = "container">
+
+
+  </div>
+
+  <div id = "comments-section" class = "container">
+
+
+  </div>
+
+  <form id="add-comment">
+<div class = "container">
+  <textarea name="coment" rows="10" cols="40" placeholder="Escribe aqui tus comentarios" id = "text-comment" ></textarea>
+  <br>
+  <label for = "rating" >Puntúa este artículo: </label>
+  <input id = "rating" type = "number" min = "0" max = "5" required>
+  <input type="submit" class = "btn btn-primary" id = "send">
+</div>
+  </form>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -64,6 +80,19 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src = "products.html"></script>
 </body>
 
 </html>
+
+<script>
+
+function stars(){
+  for(let i = 0; i<5 ; i++) {
+    let spanStar = document.createElement('span')
+    spanStar.setAttribute('class', 'fa fa-star checked')
+    document.getElementById('div').appendChild(spanStar)
+    
+  }
+}
+</script>
