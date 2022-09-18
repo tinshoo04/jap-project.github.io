@@ -71,7 +71,7 @@ function manageData() {
 
                     filterBtn.addEventListener('click', function(){
                     
-                    filterResult = myProducts.filter(product => product.cost <= parseInt(document.getElementById("rangeFilterCountMax").value) && product.cost >= parseInt(document.getElementById("rangeFilterCountMin").value))
+                    filterResult = myProducts.filter(product => product.cost <= parseInt(document.getElementById("rangeFilterCountMax").value) || document.getElementById("rangeFilterCountMax").value == undefined && product.cost >= parseInt(document.getElementById("rangeFilterCountMin").value) || document.getElementById("rangeFilterCountMin").value == undefined )
                     if(filterResult.length == 0){
                         containerCategory.innerHTML = `<p class = "text-center text-muted"> No hay productos en el rango de precio ingresado </p>`
                         

@@ -47,29 +47,44 @@ function manageProductData() {
           let contentToAppend = 
           `
           <div id = "user-comment">
-          <p><strong>${comment.user}</strong> <small>${comment.dateTime}</small> <span id="${comment.score}"></span></p>
+          <p><strong>${comment.user}</strong> <small>${comment.dateTime}</small> <span id="${comment.user}"></span></p>
           <p>${comment.description}</p>
           </div>
           
           `
           document.getElementById('comments-section').innerHTML += contentToAppend
+
           
-          for(let i = 0; i < info.length ; i++) {
+          for(let i = 0; i < comment.score ; i++) {
             let spanStar = document.createElement('span')
             spanStar.setAttribute('class', 'fa fa-star checked')
-            document.getElementById(`${comment.score}`).appendChild(spanStar)
+            document.getElementById(`${comment.user}`).appendChild(spanStar)
+          }
+
+          for(let i= 0; i < 5 - comment.score; i++){
+            let spanStar = document.createElement('span')
+            spanStar.setAttribute('class', 'fa fa-star')
+            document.getElementById(`${comment.user}`).appendChild(spanStar)
           }
         }
         
+        let comment = {
+          user : localStorage.getItem('user'),
+          id : 0,
+          
+        }
         
         document.getElementById('send').addEventListener('click', function(e){
           e.preventDefault()
-          console.log("esto funca")
+          
+          comment.id = comment.id + 1
+          
+          let rating = document.getElementById('rating').value
           let contentToAppend = `
           
           
           <div class = "user-comment">
-          <p><strong>${localStorage.getItem('user')}</strong> <small></small> <span class="star-rating"></span></p>
+          <p><strong>${localStorage.getItem('user')}</strong> <small></small> <span class="star-rating" id = ${comment.id}></span></p>
           <p>${document.getElementById('text-comment').value}</p>
           </div>
           
@@ -78,6 +93,23 @@ function manageProductData() {
           
           `
           document.getElementById('comments-section').innerHTML += contentToAppend
+
+          for(let i = 0; i < rating ; i++) {
+            let spanStar = document.createElement('span')
+            spanStar.setAttribute('class', 'fa fa-star checked')
+            document.getElementById(`${comment.id}`).appendChild(spanStar)
+            
+          }
+
+          for(let i= 0; i < 5 - rating; i++){
+            let spanStar = document.createElement('span')
+            spanStar.setAttribute('class', 'fa fa-star')
+            document.getElementById(`${comment.id}`).appendChild(spanStar)
+            
+          }
+
+
+          
         })
         
     })
