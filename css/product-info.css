@@ -29,3 +29,18 @@
 #text-comment{
     resize: none;
 }
+
+
+#container-related {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#container-info{
+    display: flex;
+    flex-direction: row;
+}
+.img {
+    width: 15em;
+}
