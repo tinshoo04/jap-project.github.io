@@ -1,4 +1,6 @@
 let productInfoContainer = document.getElementById('product-info')
+let productList;
+let productsInLS = localStorage.getItem('products');
 
 
 
@@ -138,7 +140,7 @@ function manageProductData() {
         })
         
         let relatedProducts = data.relatedProducts
-        console.log(relatedProducts)
+        
         for(let product of relatedProducts) {
           let contentToAppend = `
           
@@ -153,15 +155,37 @@ function manageProductData() {
           
           `
           document.getElementById('related-products').innerHTML += contentToAppend
+          
           document.getElementById(`${product.id}`).addEventListener('click', function(e){
             localStorage.setItem('product', `${product.id}`)
           })
           
         }
         
+
+
+      document.getElementById('addToCart').addEventListener("click",()=>{
+            
+        
+        
+        const items = {name: data.name, img: data.images[0], price: data.cost, currency: data.currency, quantity: 1, id: data.id};
+        if (productsInLS) {
+            productList = JSON.parse(productsInLS);  
+                 
+        } else {
+            productList = [];
+            
+        }
+        productList.push(items); 
+        localStorage.setItem('products', JSON.stringify(productList));
+            
+            
+    });
+      
     })
     })
-}
+    }
+
 
 
 
