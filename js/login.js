@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function(e){
         } else {
             e.preventDefault();
             usuario = localStorage.setItem('user', email.value);
-            location.href = '../index.html';
+            location.href = 'index.html';
         };
     });
 });

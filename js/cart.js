@@ -30,35 +30,58 @@ fetch(`https://japceibal.github.io/emercado-api/user_cart/25801.json`)
         <th><img src = "${product.img}" class = "img img-thumbnail"></img></th>
         <th>${product.name}</th>
         <th>${product.price} ${product.currency}</th>
-        <th><input type = "number" id = "${product.id}" min = 1></input></th>
-        <th id = "${product.name}">${product.price * product.quantity} ${product.currency}</th>
+        <th><input type = "number" id = "${product.id}-input" min = 1 value = "1"></input></th>
+        <th>  <p class = "subtotal" id = "${product.id}-subtotal"> ${product.price * product.quantity}</p> ${product.currency}</th>
         </tr>
         `
 
         document.getElementById('t-body-products').innerHTML += innerInfo
-
-
-        /* let imgTh = document.createElement('th')
-        item.setAttribute('id', `${product.id}`)
-        trProducts.appendChild(imgTh)
-        let imgProd = document.createElement('img')
-        imgProd.setAttribute('src', `${product.img}`)
-        imgTh.appendChild(imgProd) */
 
     } 
     for (let product of products){
 
     
 
-        document.getElementById(`${product.id}`).addEventListener('change', e => {
+        document.getElementById(`${product.id}-input`).addEventListener('change', e => {
         
-            product.quantity = document.getElementById(`${product.id}`).value 
-            document.getElementById(`${product.name}`).innerHTML = product.price * product.quantity + " " + product.currency
+            product.quantity = document.getElementById(`${product.id}-input`).value 
+            document.getElementById(`${product.id}-subtotal`).innerHTML = product.price * product.quantity + " " + product.currency
+
+            calcularTotal(products)
+            
        })
+
+       
+
     }
 
+        
+    
+    
+})
+    
+
+function calcularTotal(products) {
+
+    document.getElementById('sub-total').innerHTML.innerHTML = " "
+    let sum = 0
+    let subtotal = document.getElementsByClassName('subtotal')
+    console.log(subtotal)
+    let subList = []
+    console.log(subtotal)
+
+     for(let elemento of subtotal){
+        console.log(elemento)
+     subList.push(parseInt(elemento.innerText))
+     
+        }
+        console.log(subList)
+    
 
     
-    })
 
-    
+
+}
+
+calcularTotal()
+

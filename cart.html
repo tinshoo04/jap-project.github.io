@@ -38,7 +38,8 @@
   </nav>
   <main>
     <p class="h2 text-center">Carrito de compras</p>
-    <table class="table" id = "table">
+    <div>
+    <table class = "table"  id = "table">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -51,7 +52,8 @@
       <tbody id = "t-body-products">
       
       </tbody>
-      
+      </table>
+    </div>
       <div id = "delivery">
         <h5>Tipo de Envío</h5>
         <form>
@@ -80,7 +82,27 @@
       </div>
     </div>
     <input type="submit" class = "btn btn-success direc">
+
+    <div id = "cost-section">
+      
+<h4>Costos</h4>
+<div id = "subtotal" class = " border border-dark">
+      <h5 class = "text-muted" id  = "sub-total">Subtotal</h5>
+      <p class = "text-muted">Costo unitario del producto por cantidad</p>
+</div>
+<div id = "deliveryCost" class = "border border-dark">
+  <h5 class = "text-muted">Costo de envio</h5>
+  <p class = "text-muted">Costo unitario del producto por cantidad</p>
+</div>
+
+<div id = "total" class = "border border-dark">
+  <h5 class = "text-muted">Total($)</h5>
+</div>
+    </div>
   </main>
+
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">

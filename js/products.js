@@ -94,7 +94,7 @@ function manageData() {
                     for(let product of unmodifiedProducts) {
                         document.getElementById(`${product.name}`).addEventListener('click',function(e){
                             localStorage.setItem('product', `${product.id}`)
-                            window.location.href = "/product-info.html"
+                            window.location.href = "product-info.html"
                         })
                         
                     }
